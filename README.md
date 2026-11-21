@@ -1,11 +1,11 @@
 # Blender Animation Assist (BAA) プレビュー版
 
-Blender 5.2のポーズモードで使うアニメーション補助アドオンです。スマートIK、チェーンモーション、PoseAssist、反対側コピー、Pivot Rotate、Rig Tweakを一度にインストールできます。
+Blender 5.2のポーズモードで使うアニメーション補助アドオンです。既に公開しているスマートIKとチェーンモーションをこのアドオンに統合し、新機能として、PoseAssist、反対側コピー、Pivot Rotate、Rig Tweakを一度にインストールできます。
 
 ## インストール
 
 1. 旧版を使用中の場合はPivotやポーズ操作を確定し、プリファレンスで Pose Assist、Mirror Pose、Chain Motion、Body Pose Assist、Pivot Rotate、Rig Tweak を無効にします。
-2. プリファレンスの「ディスクからインストール」で配布ZIPをそのまま選び、Blender Animation Assist (BAA) を有効にします。設定の自動保存がオフの場合はプリファレンスを保存します。
+2. プリファレンスの「ディスクからインストール」でReleaseで配布しているZIPファイルをそのまま選び、Blender Animation Assist (BAA) を有効にします。設定の自動保存がオフの場合はプリファレンスを保存します。
 3. アーマチュアをポーズモードにして、3Dビューのサイドバーで「BAA」を開きます。
 
 ## 使い方
