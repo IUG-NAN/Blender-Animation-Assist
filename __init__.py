@@ -1,15 +1,6 @@
 """Blender Animation Assist. The component operator and data names are stable."""
 
-bl_info = {
-    "name": "Blender Animation Assist (BAA) プレビュー版",
-    "author": "IUG-NAN, Codex",
-    "version": (1, 5, 2),
-    "blender": (5, 2, 0),
-    "location": "3D View > BAA / Pose Context Menu",
-    "description": "ポーズ、チェーン、全身の回転、既存アニメーションの追加調整",
-    "category": "Animation",
-}
-
+import addon_utils
 import bpy
 
 from . import arp_pose_assist, arp_mirror_pose, chain_motion, body_pose_assist, pivot_rotate, rig_tweak, pose_borrow
@@ -31,6 +22,16 @@ class VIEW3D_PT_baa_root(bpy.types.Panel):
 
 
 def register():
+    # Older packages have no duplicate guard. Even a disabled legacy copy
+    # could take over the same RNA classes if enabled after this extension.
+    legacy = [mod.__name__ for mod in addon_utils.modules()
+              if not mod.__name__.startswith("bl_ext.")
+              and mod.bl_info.get("name", "").startswith("Blender Animation Assist (BAA)")]
+    if legacy:
+        raise RuntimeError("旧BAAをプリファレンスからアンインストールし、Blenderを再起動してください: "
+                           + ", ".join(legacy))
+    if getattr(bpy.types, VIEW3D_PT_baa_root.__name__, None) is not None:
+        raise RuntimeError("別のBAAがすでに有効です。使用するBAAを1つだけ有効にしてください")
     conflicts = [part.__name__.rsplit(".", 1)[-1] for part in COMPONENTS
                  if part.__name__.rsplit(".", 1)[-1] in bpy.context.preferences.addons]
     if conflicts:
@@ -49,6 +50,8 @@ def register():
 
 
 def unregister():
+    if getattr(bpy.types, VIEW3D_PT_baa_root.__name__, None) is not VIEW3D_PT_baa_root:
+        return
     for part in reversed(COMPONENTS):
         part.unregister()
     bpy.utils.unregister_class(VIEW3D_PT_baa_root)

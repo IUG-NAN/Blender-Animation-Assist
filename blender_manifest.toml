@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+id = "blender_animation_assist"
+version = "1.5.3"
+name = "Blender Animation Assist (BAA)"
+tagline = "Pose characters with smart IK, chain motion and pose reuse"
+maintainer = "IUG-NAN"
+type = "add-on"
+website = "https://github.com/IUG-NAN/Blender-Animation-Assist"
+tags = ["Animation", "Rigging"]
+blender_version_min = "5.2.0"
+license = ["SPDX:GPL-3.0-only"]
+
+[build]
+paths_exclude_pattern = ["/.git/", "/__pycache__/", "*.pyc", "/*.zip"]

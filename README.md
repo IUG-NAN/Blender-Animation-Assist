@@ -4,6 +4,12 @@ Blender 5.2のポーズモードで使うアニメーション補助アドオン
 
 ## インストール
 
+**[Blender用ZIPをダウンロード（1.5.3）](https://github.com/IUG-NAN/Blender-Animation-Assist/releases/download/v1.5.3-preview/Blender-Animation-Assist-Preview-1.5.3.zip)**
+
+**BAA 1.5.2以前から更新する方へ**　作業中のシーンを保存し、プリファレンスで旧BAAをアンインストールしてBlenderを再起動してください。BAAが2件ある場合は両方が対象です。その後、上のZIPをインストールします。
+
+1.5.3以降は、上の配布ZIPとGitHubの「Code → Download ZIP」を同じインストール先に導入すると、どちらも同じBAAとして扱われます。
+
 1. 旧版を使用中の場合はPivotやポーズ操作を確定し、プリファレンスで Pose Assist、Mirror Pose、Chain Motion、Body Pose Assist、Pivot Rotate、Rig Tweak を無効にします。
 2. プリファレンスの「ディスクからインストール」でReleaseで配布しているZIPファイルをそのまま選び、Blender Animation Assist (BAA) を有効にします。設定の自動保存がオフの場合はプリファレンスを保存します。
 3. アーマチュアをポーズモードにして、3Dビューのサイドバーで「BAA」を開きます。
